@@ -1,8 +1,10 @@
 package personal.tmBackend.dtos;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.Entity;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -19,9 +21,11 @@ public class TransferenceDataDto {
 
     private Double transferValue;
 
-    private Double tax;
+    private String tax;
 
-    private LocalDateTime transferDate;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate transferDate;
 
-    private LocalDateTime transferAppointmentDate;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate transferAppointmentDate;
 }

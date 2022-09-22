@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.*;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -30,14 +30,14 @@ public class TransferenceData {
     private Double transferValue;
 
     @Column(name = "tax")
-    private Double tax;
+    private String tax;
 
     @Column(name = "transfer_date")
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
-    private LocalDateTime transferDate;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate transferDate;
 
     @Column(name = "transfer_appointment_date")
-    @JsonFormat(pattern = "dd/MM/yyyy HH:mm:ss")
-    private LocalDateTime transferAppointmentDate;
+    @JsonFormat(pattern = "dd/MM/yyyy")
+    private LocalDate transferAppointmentDate;
 
 }
